@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Movie list</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      font-size: 26px;
+    }
+
+    img {
+      width: 100vw;
+    }
+  </style>
+</head>
+<body>
+  {{#if user}}
+    <h1>Hello {{user}}</h1>
+  {{else}}
+    <h1>Not logged in</h1>
+  {{/if}}
+  
+  {{#if todos}}
+    {{#each todos}}
+      {{!-- @index returns the index --}}
+      {{@index}}
+
+      <p>{{this}}</p>
+
+      {{!-- @first returns true for the first element --}}
+      {{#if @first}}
+        <p>{{this}} is the first element</p>
+      {{/if}}
+
+      {{!-- @last returns true for the last element --}}
+      {{#if @last}}
+        <p>{{this}} is the last element</p>
+      {{/if}}
+    {{/each}}
+  {{else}}
+    <h5>No todos</h5>
+  {{/if}}
+
+  {{!-- When you use three curly braces, you can render HTML, not only text --}}
+  {{{htmlContent}}}
+
+  <a href="/profile">Profile page</a>
+  <a href="/movies">Movies page</a>
+</body>
+</html>

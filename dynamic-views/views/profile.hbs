@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Profile</title>
+    <style>
+    body {
+      font-family: sans-serif;
+      font-size: 26px;
+    }
+
+    img {
+      width: 100vw;
+    }
+  </style>
+</head>
+<body>
+  <img src={{imageUrl}} alt="user">
+  <p>User: {{user.name}}</p>
+  <p>City: {{user.city}}</p>
+  <p>Job: {{user.job}}</p>
+
+  <h1>Favourite foods:</h1>
+  {{#each favouriteMeals}}
+    <p>Name: {{this.name}}</p>
+    <p>Calories: {{this.calories}}</p>
+  {{/each}}
+
+  <a href="/">Back to the home page</a>
+</body>
+</html>
